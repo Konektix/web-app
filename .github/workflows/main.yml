@@ -6,7 +6,7 @@ jobs:
   main-workflow-job:
     runs-on: ubuntu-latest
 
-    steps:
+    steps: 
       - name: check out repository code
         uses: actions/checkout@v4
-      - run: echo ${cat hello_world.txt}
+      - run: echo "$(cat hello_world.txt)"
