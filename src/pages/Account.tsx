@@ -10,7 +10,7 @@ export const Account: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = 'http://localhost:80/hub-manager/hubs'; // 'http://localhost:3000/api/hubs'; //  //
+            const url = 'https://api.konektix.eu/hub-manager/hubs'; // 'http://localhost:80/hub-manager/hubs'; // 'http://localhost:3000/api/hubs'; //  //
             try {
                 const response = await fetch(url, {
                     headers: {

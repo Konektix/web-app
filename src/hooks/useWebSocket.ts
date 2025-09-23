@@ -10,7 +10,7 @@ export const useWebSocket = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = 'http://localhost:80/iot-data-hub/subscriptions';
+            const url = 'https://api.konektix.eu/iot-data-hub/subscriptions'  // 'http://localhost:80/iot-data-hub/subscriptions';
             try {
                 const body = { subscriptions: [] };
 
@@ -37,7 +37,7 @@ export const useWebSocket = () => {
                 if (connection) {
                     // setwebSocketConnection(connection);
                     webSocket.current = new WebSocket(
-                        `ws://localhost:80/iot-data-hub/ws?connectionId=${connection.id}`
+                        `wss://api.konektix.eu/iot-data-hub/ws?connectionId=${connection.id}`
                     );
 
                     webSocket.current.send('hello');
