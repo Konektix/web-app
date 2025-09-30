@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useKeycloak } from './useKeycloak';
 import type { WebSocketConnection } from '../types';
+import { API_URL, WEBSOCKET_URL } from '../config';
 
 export const useWebSocket = () => {
     const { keycloak, authenticated } = useKeycloak();
@@ -10,9 +11,21 @@ export const useWebSocket = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = 'https://api.konektix.eu/iot-data-hub/subscriptions'  // 'http://localhost:80/iot-data-hub/subscriptions';
+            const url = `${API_URL}/iot-data-hub/subscriptions`; // 'http://localhost:80/iot-data-hub/subscriptions';
             try {
-                const body = { subscriptions: [] };
+                const body = {
+                    subscriptions: [
+                        { name: 'hub_state', hubId: '42447158-be82-47ec-a48d-5e06552793a2' },
+                        {
+                            name: 'measurement',
+                            device: { id: 'a26b2eb7-dd86-4573-93b8-497d804c14a4', ieeeAddress: '0x00124b00258a501d' },
+                        },
+                        {
+                            name: 'measurement',
+                            device: { id: '8c5f64af-e43e-4ef6-b430-8c07e4f3a270', ieeeAddress: '0x00124b002a557930' },
+                        },
+                    ],
+                };
 
                 const response = await fetch(url, {
                     method: 'POST',
@@ -36,9 +49,7 @@ export const useWebSocket = () => {
             fetchData().then((connection) => {
                 if (connection) {
                     // setwebSocketConnection(connection);
-                    webSocket.current = new WebSocket(
-                        `wss://api.konektix.eu/iot-data-hub/ws?connectionId=${connection.id}`
-                    );
+                    webSocket.current = new WebSocket(`${WEBSOCKET_URL}/iot-data-hub/ws?connectionId=${connection.id}`);
 
                     webSocket.current.send('hello');
                 }

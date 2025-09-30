@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { AuthenticationMessage } from '../components';
 import { useKeycloak } from '../hooks/useKeycloak';
 import { useWebSocket } from '../hooks/useWebSocket';
+import { API_URL } from '../config';
 
 export const Account: React.FC = () => {
     const { keycloak, authenticated } = useKeycloak();
@@ -10,7 +11,7 @@ export const Account: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = 'https://api.konektix.eu/hub-manager/hubs'; // 'http://localhost:80/hub-manager/hubs'; // 'http://localhost:3000/api/hubs'; //  //
+            const url = `${API_URL}/hub-manager/hubs`; // 'http://localhost:80/hub-manager/hubs'; // 'http://localhost:3000/api/hubs'; //  //
             try {
                 const response = await fetch(url, {
                     headers: {
