@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { Container } from '@mui/material';
 import { NavBar } from './NavBar';
 
@@ -6,9 +6,11 @@ interface LayoutProps {
     children: ReactNode;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ children }) => (
+export const Layout = ({ children }: LayoutProps) => (
     <>
         <NavBar />
-        <Container maxWidth="md">{children}</Container>
+        <Container maxWidth="md" sx={{ pt: 8 }}>
+            {children}
+        </Container>
     </>
 );

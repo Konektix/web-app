@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0.468 0.764 135.168 155.713" width="135.168px" height="155.713px" xmlns:bx="https://boxy-svg.com">
+<g id="object-2">
+<path d="M 68.05 6.964 L 130.032 42.75 L 130.032 114.32 L 68.05 150.106 L 6.068 114.321 L 6.068 42.749 Z" bx:shape="n-gon 68.05 78.535 71.571 71.571 6 0 1@1d6cde3b" style="paint-order: fill; fill: none; stroke-width: 12px;"/>
+<ellipse style="fill: none; stroke-width: 8px;" cx="68.356" cy="36.602" rx="8.922" ry="8.922"/>
+<ellipse style="fill: none; stroke-width: 8px;" cx="31.946" cy="58.338" rx="8.922" ry="8.922"/>
+<ellipse style="fill: none; stroke-width: 8px;" cx="31.48" cy="100.754" rx="8.922" ry="8.922"/>
+<ellipse style="fill: none; stroke-width: 8px;" cx="67.837" cy="122.661" rx="8.922" ry="8.922"/>
+<ellipse style="fill: none; stroke-width: 8px;" cx="105.126" cy="101.22" rx="8.922" ry="8.922"/>
+<ellipse style="fill: none; stroke-width: 8px;" cx="105.125" cy="57.871" rx="8.922" ry="8.922"/>
+<ellipse style="fill: none; stroke-width: 8px;" cx="68.303" cy="79.779" rx="8.922" ry="8.922"/>
+<path style="stroke-width: 8px;" d="M 39.456 54.171 L 59.032 41.586"/>
+<path style="stroke-width: 8px;" d="M 98.029 54.703 L 77.986 41.652"/>
+<path style="stroke-width: 8px;" d="M 77.322 75.372 L 97.364 63.254"/>
+<path style="stroke-width: 8px;" d="M 39.832 96.12 L 58.942 84.468"/>
+<path style="stroke-width: 8px;" d="M 38.917 104.981 L 61.29 118.964"/>
+<path style="stroke-width: 8px;" d="M 75.82 119.467 L 98.658 105.95"/>
+<path style="stroke-width: 8px;" d="M 96.941 97.518 L 77.83 85.865"/>
+</g>
+</svg>

@@ -1,6 +1,9 @@
-import { Link } from 'react-router';
-import { Button, AppBar, Toolbar, Typography } from '@mui/material';
+import { Button, AppBar, Toolbar } from '@mui/material';
 import { useKeycloak } from '../hooks/useKeycloak';
+import { Header } from './Header';
+import { MessageButton } from './MessageButton';
+import { NotificationsButton } from './NotificationsButton';
+import { AvatarButton } from './AvatarButton';
 
 export const NavBar = () => {
     const { keycloak, authenticated } = useKeycloak();
@@ -9,29 +12,15 @@ export const NavBar = () => {
         keycloak?.login();
     };
 
-    const handleLogout = () => {
-        keycloak?.logout();
-    };
-
     return (
         <AppBar position="fixed">
             <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
-                        Keycloak POC
-                    </Link>
-                </Typography>
+                <Header />
                 {authenticated ? (
                     <>
-                        <Button color="inherit" component={Link} to="/account">
-                            My Account
-                        </Button>
-                        <Button color="inherit" component={Link} to="/my-items">
-                            My Items
-                        </Button>
-                        <Button color="inherit" onClick={handleLogout}>
-                            Logout
-                        </Button>
+                        <MessageButton />
+                        <NotificationsButton />
+                        <AvatarButton />
                     </>
                 ) : (
                     <Button color="inherit" onClick={handleLogin}>
