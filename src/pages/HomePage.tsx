@@ -1,5 +1,6 @@
 import React from 'react';
 import { useKeycloak } from '../hooks/useKeycloak';
+import { Autocomplete } from '../components/Autocomplete';
 
 export const HomePage: React.FC = () => {
     const { keycloak, authenticated } = useKeycloak();
@@ -32,6 +33,14 @@ export const HomePage: React.FC = () => {
     return (
         <div>
             <h1>Welcome to the Home Page!</h1>
+            <Autocomplete
+                label="Autocomplete"
+                options={[
+                    { value: 0, label: 'a' },
+                    { value: 1, label: 'b' },
+                    { value: 2, label: 'c' },
+                ]}
+            />
             {authenticated ? (
                 <div>
                     <p>Hello, {keycloak?.idTokenParsed?.preferred_username}!</p>
